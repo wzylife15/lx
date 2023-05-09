@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- <bean id="emp" class="com.atguigu.ioc.Emp" autowire="byType">
+		<property name="eid" value="1001"></property>
+		<property name="ename" value="张三"></property>
+		<property name="car" ref="Car"></property>
+		<property name="dept" ref="Dept"></property>
+	</bean> -->
+	
+	<bean id="car" class="com.atguigu.ioc.Car">
+		<property name="cid" value="66"></property>
+		<property name="cname" value="奥迪"></property>
+	</bean>
+	
+	<bean id="dept" class="com.atguigu.ioc.Dept">
+		<property name="did" value="111"></property>
+		<property name="dname" value="开发部"></property>
+	</bean>
+</beans>

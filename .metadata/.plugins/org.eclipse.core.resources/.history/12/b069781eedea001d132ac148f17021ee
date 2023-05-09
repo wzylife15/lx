@@ -1,0 +1,15 @@
+server: 
+  port: 3344 
+  
+spring:
+  application:
+    name:  microservice-config
+  cloud:
+    config:
+      server:
+        git:
+          username: wzylife15@gmail.com
+          password: wang123.
+          uri: git@github.com:wzylife15/microservice-config.git
+ 
+

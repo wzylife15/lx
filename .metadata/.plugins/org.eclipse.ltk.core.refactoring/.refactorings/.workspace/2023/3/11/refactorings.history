@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;day05_code_后台系统_RBAC_菜单模块_许可模块【zTree树型结构】&apos;" deleteContents="true" description="Delete resource &apos;day05_code_后台系统_RBAC_菜单模块_许可模块【zTree树型结构】&apos;" element1="/day05_code_后台系统_RBAC_菜单模块_许可模块【zTree树型结构】" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1678863418366"/>
+</session>

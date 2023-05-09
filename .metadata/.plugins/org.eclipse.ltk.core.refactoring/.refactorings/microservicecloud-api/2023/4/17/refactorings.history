@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.atguigu.springcloud.entity&apos; to &apos;com.atguigu.springcloud.entities&apos;&#x0D;&#x0A;- Original project: &apos;microservicecloud-api&apos;&#x0D;&#x0A;- Original element: &apos;microservicecloud-api/src/main/java/com.atguigu.springcloud.entity&apos;&#x0D;&#x0A;- Renamed element: &apos;microservicecloud-api/src/main/java/com.atguigu.springcloud.entities&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.atguigu.springcloud.entity&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.atguigu.springcloud.entity" name="com.atguigu.springcloud.entities" qualified="false" references="true" stamp="1682652516880" textual="false" version="1.0"/>
+</session>
