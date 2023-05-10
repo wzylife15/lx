@@ -19,6 +19,12 @@
   		<groupId>com.atguigu.atcrowdfunding</groupId>
   		<artifactId>atcrowdfunding-manager-impl</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
+  		<exclusions>
+  			<exclusion>
+  				<groupId>commons-logging</groupId>
+  				<artifactId>commons-logging</artifactId>
+  			</exclusion>
+  		</exclusions>
   	</dependency>
   
 	<dependency>

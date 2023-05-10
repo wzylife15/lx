@@ -7,13 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	欢迎来到众筹系统
 	<%
 		//int i = 1/0 ;
 	%>
 
 	<!-- http://localhost:8080/atcrowdfunding-main/index -->
-	<jsp:forward page="/index"></jsp:forward>
+<%-- 	<jsp:forward page="/index"></jsp:forward> --%>
 	
 	
 	<!-- http://localhost:8080/atcrowdfunding-main/welcome.jsp
@@ -69,20 +69,6 @@
 	
 	
 	 --%>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
