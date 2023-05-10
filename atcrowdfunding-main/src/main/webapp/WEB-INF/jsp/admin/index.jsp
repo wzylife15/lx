@@ -70,7 +70,7 @@
 	                  <td>
 					      <button type="button" class="btn btn-success btn-xs"><i class=" glyphicon glyphicon-check"></i></button>
 					      <button type="button" class="btn btn-primary btn-xs" onclick="window.location.href='${PATH}/admin/toUpdate?pageNum=${page.pageNum}&id=${admin.id}'"><i class=" glyphicon glyphicon-pencil"></i></button>
-						  <button type="button" adminId="${admin.id}" class="deleteBtnClass btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></button>
+						  <button type="button" adminId="${admin.id}"  class="deleteBtnClass btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></button>
 					  </td>
 	                </tr>
                 </c:forEach>
@@ -88,7 +88,7 @@
 								<li><a href="${PATH}/admin/index?condition=${param.condition}&pageNum=${page.pageNum-1}">上一页</a></li>
 							</c:if>
 							
-							
+<%-- 							${page } --%>
 							<c:forEach items="${page.navigatepageNums}" var="num">
 								<c:if test="${num == page.pageNum }">
 									<li class="active"><a href="${PATH}/admin/index?condition=${param.condition}&pageNum=${num}">${num} <span class="sr-only">(current)</span></a></li>
@@ -141,10 +141,9 @@
             	var id = $(this).attr("adminId");
             	
             	layer.confirm('您是否确定删除该条数据?',{btn:['确定','取消']},function(index){
-            		
-            		window.location.href="${PATH}/admin/doDelete?pageNum=${page.pageNum}&id="+id;
-            		
-            		layer.close(index);
+	           		window.location.href="${PATH}/admin/doDelete?pageNum=${page.pageNum}&id="+id;
+	           		
+	           		layer.close(index);
             	},function(index){
             		layer.close(index);
             	});
@@ -152,10 +151,7 @@
             	
             });
             
-            
-            
-            
-            
+              
             $("#selectAll").click(function(){
             	
             	//$("tbody input[type='checkbox']").attr("checked",this.checked);  //主要出现自定义属性
@@ -187,7 +183,7 @@
             	ids = array.join(",");
             	
             	console.log(ids);
-            	
+            	var id = $(this).attr("adminId");
             	
 				layer.confirm('您是否确定删除该些数据?',{btn:['确定','取消']},function(index){
             		
@@ -201,13 +197,7 @@
             	
             });
             
-            
-            
-            
-            
-            
-            
-            
+                
         </script>
   </body>
 </html>

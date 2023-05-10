@@ -13,10 +13,10 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-	<!-- 自定义监听器 -->
-<!-- 	<listener> -->
-<!-- 		<listener-class>com.atguigu.atcrowdfunding.listener.SystemUpInitListener</listener-class> -->
-<!-- 	</listener> -->
+<!-- 	自定义监听器 -->
+	<listener>
+		<listener-class>com.atguigu.atcrowdfunding.listener.SystemUpInitListener</listener-class>
+	</listener>
 
 
 	<!-- 字符编码过滤器 -->

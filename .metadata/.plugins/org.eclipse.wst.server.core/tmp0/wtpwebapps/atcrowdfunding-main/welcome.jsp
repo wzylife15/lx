@@ -7,13 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- 	欢迎来到众筹系统 -->
 
-	<%
-		//int i = 1/0 ;
-	%>
 
 	<!-- http://localhost:8080/atcrowdfunding-main/index -->
-	<jsp:forward page="/index"></jsp:forward>
+<%-- 	<jsp:forward page="/index"></jsp:forward> --%>
 	
 	
 	<!-- http://localhost:8080/atcrowdfunding-main/welcome.jsp
@@ -22,7 +20,7 @@
 		 http://localhost:8080/atcrowdfunding-main/xxx/welcome.jsp
 		  http://localhost:8080/atcrowdfunding-main/xxx/index  相对于当前welcome.jsp的请求路径进行资源查找。
 	 -->
-	<%-- <jsp:forward page="index"></jsp:forward> --%>
+	<jsp:forward page="/index"></jsp:forward>
 	
 	
 	<%--
@@ -69,20 +67,6 @@
 	
 	
 	 --%>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

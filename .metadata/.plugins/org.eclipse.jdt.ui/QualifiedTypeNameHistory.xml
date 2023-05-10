@@ -44,4 +44,7 @@
 <fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.EnableDiscoveryClient"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.client.loadbalancer.LoadBalanced"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.EnableEurekaClient"/>
+<fullyQualifiedTypeName name="com.atguigu.atcrowdfunding.service.TAdminServiceImpl"/>
+<fullyQualifiedTypeName name="com.atguigu.atcrowdfunding.util.MD5Util"/>
+<fullyQualifiedTypeName name="com.atguigu.atcrowdfunding.service.TMenuService"/>
 </qualifiedTypeNameHistroy>

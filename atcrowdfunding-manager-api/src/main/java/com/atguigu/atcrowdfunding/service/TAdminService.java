@@ -7,21 +7,23 @@ import javax.security.auth.login.LoginException;
 
 import com.atguigu.atcrowdfunding.bean.TAdmin;
 //import com.github.pagehelper.PageInfo;
+import com.github.pagehelper.PageInfo;
 
 public interface TAdminService {
 
 	TAdmin getTAdminByLogin(Map<String, Object> paramMap) throws LoginException;
 
-//	PageInfo<TAdmin> listAdminPage(Map<String, Object> paramMap);
 
-//	void saveTAdmin(TAdmin admin);
+	PageInfo<TAdmin> listAdminPage(Map<String, Object> paramMap);
+
+	void saveTAdmin(TAdmin admin);
 //
-//	TAdmin getTAdminById(Integer id);
+	TAdmin getTAdminById(Integer id);
 //
-//	void updateTAdmin(TAdmin admin);
-//
-//	void deleteTAdmin(Integer id);
-//
-//	void deleteBatch(List<Integer> idList);
+	void updateTAdmin(TAdmin admin);
+
+	void deleteTAdmin(Integer id);
+
+	void deleteBatch(List<Integer> idList);
 
 }
