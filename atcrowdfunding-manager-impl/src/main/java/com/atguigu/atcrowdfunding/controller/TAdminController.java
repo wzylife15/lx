@@ -27,68 +27,68 @@ public class TAdminController {
 	@Autowired
 	TAdminService adminService ;
 //	
-//	@Autowired
-//	TRoleService roleService ;
+	@Autowired
+	TRoleService roleService ;
 	
 	Logger log = LoggerFactory.getLogger(TAdminController.class);
 	
 //	
-//	@ResponseBody
-//	@RequestMapping("/admin/doUnAssign") 
-//	public String doUnAssign(Integer[] roleId,Integer adminId) {
-//		
-//		log.debug("adminId={}",adminId);
-//		for (Integer rId : roleId) {
-//			log.debug("roleId={}",rId);
-//		}
-//		
-//		roleService.deleteAdminAndRoleRelationship(roleId,adminId);
-//
-//		return "ok";
-//	}
+	@ResponseBody
+	@RequestMapping("/admin/doUnAssign") 
+	public String doUnAssign(Integer[] roleId,Integer adminId) {
+		
+		log.debug("adminId={}",adminId);
+		for (Integer rId : roleId) {
+			log.debug("roleId={}",rId);
+		}
+		
+		roleService.deleteAdminAndRoleRelationship(roleId,adminId);
+
+		return "ok";
+	}
 //	
 //	//"id=5&id=7&id=8&adminId=1"
-//	@ResponseBody
-//	@RequestMapping("/admin/doAssign") 
-//	public String doAssign(Integer[] roleId,Integer adminId) {
-//		
-//		log.debug("adminId={}",adminId);
-//		for (Integer rId : roleId) {
-//			log.debug("roleId={}",rId);
-//		}
-//		
-//		roleService.saveAdminAndRoleRelationship(roleId,adminId);
-//
-//		return "ok";
-//	}
+	@ResponseBody
+	@RequestMapping("/admin/doAssign") 
+	public String doAssign(Integer[] roleId,Integer adminId) {
+		
+		log.debug("adminId={}",adminId);
+		for (Integer rId : roleId) {
+			log.debug("roleId={}",rId);
+		}
+		
+		roleService.saveAdminAndRoleRelationship(roleId,adminId);
+
+		return "ok";
+	}
 //	
-//	@RequestMapping("/admin/toAssign") 
-//	public String toAssign(String id,Model model) {
-//		
-//		//1.查询所有角色
-//		List<TRole> allList = roleService.listAllRole();
-//		
-//		
-//		//2.根据用户id查询已经拥有的角色id
-//		List<Integer> roleIdList = roleService.getRoleIdByAdminId(id);
-//		
-//		
-//		//3.将所有角色，进行划分：
-//		List<TRole> assignList = new ArrayList<TRole>();
-//		List<TRole> unAssignList = new ArrayList<TRole>();
-//		
-//		model.addAttribute("assignList", assignList);
-//		model.addAttribute("unAssignList", unAssignList);
-//		
-//		for(TRole role:allList) {
-//			if(roleIdList.contains(role.getId())) {//4.已分配角色集合
-//				assignList.add(role);
-//			}else {//5.未分配角色集合
-//				unAssignList.add(role);
-//			}
-//		}
-//		return "admin/assignRole";
-//	}
+	@RequestMapping("/admin/toAssign") 
+	public String toAssign(String id,Model model) {
+		
+		//1.查询所有角色
+		List<TRole> allList = roleService.listAllRole();
+		
+		
+		//2.根据用户id查询已经拥有的角色id
+		List<Integer> roleIdList = roleService.getRoleIdByAdminId(id);
+		
+		 
+		//3.将所有角色，进行划分：
+		List<TRole> assignList = new ArrayList<TRole>();
+		List<TRole> unAssignList = new ArrayList<TRole>();
+		
+		model.addAttribute("assignList", assignList);
+		model.addAttribute("unAssignList", unAssignList);
+		
+		for(TRole role:allList) {
+			if(roleIdList.contains(role.getId())) {//4.已分配角色集合
+				assignList.add(role);
+			}else {//5.未分配角色集合
+				unAssignList.add(role);
+			}
+		}
+		return "admin/assignRole";
+	}
 //	
 	@RequestMapping("/admin/doDeleteBatch") //   ids = "1,2,3,4,5";
 	public String doDelete(String ids,Integer pageNum) {

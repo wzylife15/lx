@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.atguigu.atcrowdfunding.bean.TRole;
 import com.atguigu.atcrowdfunding.bean.TRoleExample;
-import com.atguigu.atcrowdfunding.bean.TRolePermission;
 import com.atguigu.atcrowdfunding.bean.TRolePermissionExample;
 import com.atguigu.atcrowdfunding.mapper.TAdminRoleMapper;
 import com.atguigu.atcrowdfunding.mapper.TRoleMapper;
@@ -51,6 +51,7 @@ public class TRoleServiceImpl implements TRoleService {
 		return page;
 	}
 
+	//@PreAuthorize("hasRole('PM - 项目经理')")
 	@Override
 	public void saveTRole(TRole role) {
 		roleMapper.insertSelective(role);
@@ -76,19 +77,19 @@ public class TRoleServiceImpl implements TRoleService {
 		return roleMapper.selectByExample(null);
 	}
 
-//	@Override
-//	public List<Integer> getRoleIdByAdminId(String id) {
-//		return adminRoleMapper.getRoleIdByAdminId(id);
-//	}
+	@Override
+	public List<Integer> getRoleIdByAdminId(String id) {
+		return adminRoleMapper.getRoleIdByAdminId(id);
+	}
 
 	@Override
 	public void saveAdminAndRoleRelationship(Integer[] roleId, Integer adminId) {
-//		adminRoleMapper.saveAdminAndRoleRelationship(roleId,adminId);
+		adminRoleMapper.saveAdminAndRoleRelationship(roleId,adminId);
 	}
 
 	@Override
 	public void deleteAdminAndRoleRelationship(Integer[] roleId, Integer adminId) {
-//		adminRoleMapper.deleteAdminAndRoleRelationship(roleId,adminId);
+		adminRoleMapper.deleteAdminAndRoleRelationship(roleId,adminId);
 	}
 
 	@Override
@@ -99,23 +100,11 @@ public class TRoleServiceImpl implements TRoleService {
 		example.createCriteria().andRoleidEqualTo(roleId);
 		rolePermissionMapper.deleteByExample(example);
 		
-//		rolePermissionMapper.saveRoleAndPermissionRelationship(roleId,ids);
-	}
-
-	@Override
-	public List<Integer> getRoleIdByAdminId(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		rolePermissionMapper.saveRoleAndPermissionRelationship(roleId,ids);
 	}
 
 	@Override
 	public List<Integer> listPermissionIdByRoleId(Integer roleId) {
-		// TODO Auto-generated method stub
-		return null;
+		return rolePermissionMapper.listPermissionIdByRoleId(roleId);
 	}
-
-//	@Override
-//	public List<Integer> listPermissionIdByRoleId(Integer roleId) {
-////		return rolePermissionMapper.listPermissionIdByRoleId(roleId);
-//	}
 }

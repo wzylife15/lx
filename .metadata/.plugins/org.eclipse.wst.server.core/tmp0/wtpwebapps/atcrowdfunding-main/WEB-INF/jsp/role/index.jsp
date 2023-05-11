@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%-- <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %> --%>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -43,7 +44,10 @@
   <button id="queryBtn" type="button" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i> 查询</button>
 </form>
 <button type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i class=" glyphicon glyphicon-remove"></i> 删除</button>
+
+<security:authorize access="hasRole('PM - 项目经理')">
 <button id="addBtn" type="button" class="btn btn-primary" style="float:right;" ><i class="glyphicon glyphicon-plus"></i> 新增</button>
+</security:authorize>
 <br>
  <hr style="clear:both;">
           <div class="table-responsive">
@@ -131,7 +135,24 @@
     
     
     
-    
+<!-- 修改数据 模态框 -->
+<div class="modal fade" id="assignModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">给角色分配权限</h4>
+      </div>
+      <div class="modal-body">
+		  <ul id="treeDemo" class="ztree"></ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button id="assignBtn" type="button" class="btn btn-primary">分配</button>
+      </div>
+    </div>
+  </div>
+</div>    
     
     
     
@@ -216,9 +237,9 @@
 					tr.append('<td>'+e.name+'</td>');
 					
 					var td = $('<td></td>');
-					td.append('<button type="button" class="btn btn-success btn-xs"><i class=" glyphicon glyphicon-check"></i></button>');
-					td.append('<button type="button" roleId="'+e.id+'" class="updateClass btn btn-primary btn-xs"><i class=" glyphicon glyphicon-pencil"></i></button>');
-					td.append('<button type="button" roleId="'+e.id+'" class="deleteClass btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></button>');
+					td.append('<button type="button" roleId="'+e.id+'" class="assignPermissionClass btn btn-success btn-xs"><i class=" glyphicon glyphicon-check"></i></button>');
+					td.append(' <button type="button" roleId="'+e.id+'" class="updateClass btn btn-primary btn-xs"><i class=" glyphicon glyphicon-pencil"></i></button>');
+					td.append(' <button type="button" roleId="'+e.id+'" class="deleteClass btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></button>');
         		
 					tr.append(td);
 					
@@ -301,6 +322,8 @@
         						$("#addModal input[name='name']").val("");
         						initData(1); //添加后初始化第一页，倒序排序。
         					});
+        				}else if("403"==result){
+        					layer.msg("您无权访问该功能!");
         				}else{
         					layer.msg("保存失败");
         				}
@@ -386,6 +409,116 @@
         	
         	//===删除 结束==============================================================
 			
+        		
+        	//===给角色分配权限 开始==============================================================	
+        	var roleId = '';	
+        	
+        	$("tbody").on("click",".assignPermissionClass",function(){
+        		$("#assignModal").modal({
+        			show:true,
+        			backdrop:'static',
+        			keyboard:false
+        		});
+        		
+        		roleId = $(this).attr("roleId");
+        		
+        		initTree();
+        		
+        	});
+        	
+        	function initTree(){
+        		
+        		var setting = {
+        				check: {
+        					enable: true
+        				},
+        				data: {
+        					simpleData: {
+        						enable: true,
+        						pIdKey: "pid"
+        					},
+        					key: {
+        						url: "xxx",
+        						name:"title"
+        					}
+        				},
+        				view: {
+        					addDiyDom: function(treeId,treeNode){
+        						$("#"+treeNode.tId+"_ico").removeClass();
+        						$("#"+treeNode.tId+"_span").before('<span class="'+treeNode.icon+'"></span>');
+        					}
+        				}
+        				
+        		};
+        		
+        		
+        		//多个异步请求，执行先后顺序问题。
+        		
+        		//1.加载数据
+        		$.get("${PATH}/permission/listAllPermissionTree",function(data){			
+        			//data.push({"id":0,"title":"系统权限","icon":"glyphicon glyphicon-asterisk"});
+        			
+        			var treeObj = $.fn.zTree.init($("#treeDemo"), setting, data);
+        			//var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+        			treeObj.expandAll(true);
+        			
+        			//2.回显已分配许可
+            		$.get("${PATH}/role/listPermissionIdByRoleId",{roleId:roleId},function(data){
+            			$.each(data,function(i,e){
+            				var permissionId = e ;
+            				var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+            				var node = treeObj.getNodeByParam("id", permissionId, null);
+            				treeObj.checkNode(node, true, false , false);
+            			});
+            		}); 
+        		}); 
+        		
+        		
+
+        	}
+        		
+        	$("#assignBtn").click(function(){
+        		
+        		var json = {
+        				roleId:roleId
+        		};
+        		
+        		console.log(roleId);
+        		var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+        		var nodes = treeObj.getCheckedNodes(true);
+        		$.each(nodes,function(i,e){
+        			var permissionId = e.id ;
+        			console.log(permissionId);
+        			
+        			json['ids['+i+']'] = permissionId;
+        			
+        			//多条数据提交和接收
+        			//json['userList[i].name'] = 'xxx';
+        			//json['userList[i].age'] = 23;
+        		});
+        		
+        		
+        		
+        		$.ajax({
+        			type:"post",
+        			url:"${PATH}/role/doAssignPermissionToRole",
+        			data:json,
+        			success:function(result){
+        				if("ok"==result){
+        					layer.msg("分配成功",{time:1000},function(){
+        						$("#assignModal").modal('hide');
+        					});
+        				}else{
+        					layer.msg("分配失败");
+        				}
+        			}
+        		});
+        		
+        	});
+        		
+        	//===给角色分配权限 结束==============================================================		
+        		
+	
         </script>
   </body>
 </html>
