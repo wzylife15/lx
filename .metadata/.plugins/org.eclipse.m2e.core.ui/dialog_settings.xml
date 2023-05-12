@@ -4,11 +4,13 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.atguigu.maven"/>
 			<item value="com.atguigu.springcloud"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="SpringSecurity-HelloWorld"/>
 			<item value="microservicecloud-config-3344"/>
 			<item value="microservicecloud"/>
 		</list>
@@ -78,13 +80,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="org.microservicecloud.config.3344"/>
 		</list>
 		<list key="groupId">
-			<item value="com.atguigu.springcloud"/>
 		</list>
 		<list key="artifactId">
-			<item value="microservicecloud-config-3344"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
