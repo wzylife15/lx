@@ -28,5 +28,5 @@ public interface TPermissionMenuMapper {
 
     int updateByPrimaryKey(TPermissionMenu record);
 
-	void insertBatch(Integer mid, List<Integer> perIdArray);
+	void insertBatch(@Param("mid")Integer mid, @Param("perIdArray")List<Integer> perIdArray);
 }

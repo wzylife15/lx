@@ -27,8 +27,8 @@ public interface TRolePermissionMapper {
     int updateByPrimaryKeySelective(TRolePermission record);
 
     int updateByPrimaryKey(TRolePermission record);
+    
+	void saveRoleAndPermissionRelationship(@Param("roleId")Integer roleId, @Param("permissionIds") List<Integer> ids);
 
-	void saveRoleAndPermissionRelationship(Integer roleId, List<Integer> ids);
-
-	List<Integer> listPermissionIdByRoleId(Integer roleId);
+	List<Integer> listPermissionIdByRoleId(@Param("roleId")Integer roleId);
 }

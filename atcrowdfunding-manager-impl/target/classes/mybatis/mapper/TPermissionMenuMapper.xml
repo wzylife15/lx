@@ -6,6 +6,20 @@
     <result column="menuid" jdbcType="INTEGER" property="menuid" />
     <result column="permissionid" jdbcType="INTEGER" property="permissionid" />
   </resultMap>
+  
+  <insert id="insertBatch">
+<!--   	delete from t_admin where id in -->
+<!--   	<foreach collection="idList" item="adminId" open="(" separator="," close=")"> -->
+<!--   		${adminId} -->
+<!--   	</foreach> -->
+  	insert into t_permission_menu ( menuid, permissionid)
+    values 
+    <foreach collection="perIdArray" item="ids"  separator=",">
+  		( #{mid,jdbcType=INTEGER}, #{ids,jdbcType=INTEGER})
+  	</foreach>
+    
+  </insert>
+  
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
