@@ -1,3 +1,0 @@
-#Tomcat publish data
-#Fri May 12 21:17:10 CST 2023
-org.eclipse.jst.jee.server\:/binary\:D\:\\RepMaven\\org\\springframework\\spring-web\\4.3.20.RELEASE\\spring-web-4.3.20.RELEASE.jar=WEB-INF/lib/spring-web-4.3.20.RELEASE.jar

@@ -107,14 +107,18 @@
 		<item value="6" key="index"/>
 	</section>
 	<section name="quick_assist_proposal_size">
+		<item value="275" key="size.y"/>
+		<item value="618" key="size.x"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
 		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="NewPackageWizardPage">
-		<item value="true" key="create_package_info_java"/>
+		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="completion_proposal_size">
+		<item value="284" key="size.y"/>
+		<item value="624" key="size.x"/>
 	</section>
 	<section name="AddGetterSetterDialog">
 		<item value="false" key="SortOrdering"/>

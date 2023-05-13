@@ -28,26 +28,29 @@
 
     <div class="container">
 
-      <form id="loginForm" class="form-signin" role="form" action="doLogin" method="post">
+      <form id="loginForm" class="form-signin" role="form" action="${PATH }/login" method="post">
         <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户登录</h2>
         
-          <c:if test="${not empty message}">
+          <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
 	       	  <div class="form-group has-success has-feedback">
-					${message }
+					${SPRING_SECURITY_LAST_EXCEPTION.message }
 			  </div> 
 		  </c:if>
         
+          
+          
 		  <div class="form-group has-success has-feedback">  <%--value="${param.loginacct }" --%>
+		  	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			<input type="text" class="form-control" id="loginacct" name="loginacct" value="superadmin" placeholder="请输入登录账号" autofocus>
 			<span class="glyphicon glyphicon-user form-control-feedback"></span>
 		  </div> 
 		  <div class="form-group has-success has-feedback">
-			<input type="password" class="form-control" id="userpswd" name="userpswd" value="123" placeholder="请输入登录密码" style="margin-top:10px;">
+			<input type="password" class="form-control" id="userpswd" name="userpswd" value="1" placeholder="请输入登录密码" style="margin-top:10px;">
 			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 		  </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="remember-me"> 记住我
+            <input type="checkbox" name="remember-me"> 记住我
           </label>
           <br>
           <label>

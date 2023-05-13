@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %> --%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -373,6 +373,8 @@
     						$("#updateModal").modal('hide');
     						initData(json.pageNum); //初始化当前页
     					});
+    				}else if("403"==result){
+    					layer.msg("你无权修改");
     				}else{
     					layer.msg("修改失败");
     				}
