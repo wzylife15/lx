@@ -4,12 +4,17 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.atguigu.scw"/>
 			<item value="com.atguigu.maven"/>
 			<item value="com.atguigu.springcloud"/>
 		</list>
 		<list key="name">
+			<item value="scw-common"/>
+			<item value="com.atguigu.scw"/>
 		</list>
 		<list key="artifactId">
+			<item value="scw-common"/>
+			<item value="scw-parent"/>
 			<item value="SpringSecurity-HelloWorld"/>
 			<item value="microservicecloud-config-3344"/>
 			<item value="microservicecloud"/>

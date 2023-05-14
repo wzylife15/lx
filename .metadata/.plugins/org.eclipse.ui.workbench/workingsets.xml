@@ -2,16 +2,16 @@
 <workingSetManager>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1678863493337_2" label="Maven" name="Maven"/>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1678863564873_3" label="atcrowdfunding" name="atcrowdfunding">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/atcrowdfunding-main" type="4"/>
+<item elementID="=atcrowdfunding-main" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/atcrowdfunding-parent" type="4"/>
-<item elementID="=SpringSecurity-HelloWorld" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/atcrowdfunding-manager-api" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/atcrowdfunding-bean" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/atcrowdfunding-common" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/atcrowdfunding-manager-impl" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringSecurity-HelloWorld" type="4"/>
+<item elementID="=atcrowdfunding-manager-api" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=atcrowdfunding-bean" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=atcrowdfunding-common" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=atcrowdfunding-manager-impl" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1678954518789_4" label="Springboot" name="Springboot">
-<item elementID="=springboot-helloworld-auto" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/springboot-helloworld-auto" type="4"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1681374934917_5" label="fuxian" name="fuxian">
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/JVM01" type="4"/>
@@ -28,6 +28,16 @@
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/microservicecloud-consumer-dept-80" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/microservicecloud-config-3344" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/microservicecloud-api" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1684040959243_7" label="scw" name="scw">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/scw-parent" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/scw-common" type="4"/>
+<item elementID="=scw-order" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/scw-register" type="4"/>
+<item elementID="=scw-register" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=scw-user" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=scw-project" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=cloud-consumer-user" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1667563631403_0" label="Window Working Set" name="Aggregate for window 1667563631403"/>
 <mruList name="Springboot"/>

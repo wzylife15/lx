@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.atguigu.springcloud.dao.DeptDao"/>
-<fullyQualifiedTypeName name="java.lang.Deprecated"/>
-<fullyQualifiedTypeName name="com.atguigu.springcloud.service.DeptService"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
-<fullyQualifiedTypeName name="com.atguigu.springcloud.DeptProvider8001_App"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
 <fullyQualifiedTypeName name="org.springframework.web.client.RestTemplate"/>
 <fullyQualifiedTypeName name="com.atguigu.springcloud.entities.Dept"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
@@ -18,7 +11,6 @@
 <fullyQualifiedTypeName name="com.netflix.discovery.DiscoveryClient"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.DiscoveryClient"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.client.ServiceInstance"/>
-<fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.EnableDiscoveryClient"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.client.loadbalancer.LoadBalanced"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.EnableEurekaClient"/>
 <fullyQualifiedTypeName name="com.atguigu.atcrowdfunding.service.TAdminServiceImpl"/>
@@ -60,4 +52,12 @@
 <fullyQualifiedTypeName name="org.springframework.security.core.GrantedAuthority"/>
 <fullyQualifiedTypeName name="org.springframework.security.access.prepost.PreAuthorize"/>
 <fullyQualifiedTypeName name="org.springframework.security.web.access.AccessDeniedHandler"/>
+<fullyQualifiedTypeName name="org.mybatis.spring.annotation.MapperScan"/>
+<fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.EnableDiscoveryClient"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+<fullyQualifiedTypeName name="io.swagger.annotations.Api"/>
+<fullyQualifiedTypeName name="io.swagger.annotations.ApiOperation"/>
+<fullyQualifiedTypeName name="io.swagger.annotations.ApiImplicitParams"/>
+<fullyQualifiedTypeName name="io.swagger.annotations.ApiImplicitParam"/>
 </qualifiedTypeNameHistroy>
