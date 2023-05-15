@@ -9,6 +9,8 @@
 	<name>com.atguigu.scw</name>
 	<description>父工程</description>
 
+	
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -16,6 +18,10 @@
 		<relativePath />
 	</parent>
 
+	<properties>
+		<mbg.version>1.3.5</mbg.version>
+	</properties>
+	
 	<modules>
 		<module>../scw-common</module>
 		<module>../scw-order</module>
@@ -85,5 +91,29 @@
 			<artifactId>jetty-util</artifactId>
 			<!-- <version>9.3.7.v20160115</version> -->
 		</dependency>
+		
+		<!-- MBG -->
+       <dependency>
+          <groupId>org.mybatis.generator</groupId>
+          <artifactId>mybatis-generator-core</artifactId>
+          <version>${mbg.version}</version>
+       </dependency> 
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.7</version>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>5.1.42</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
 </project>
