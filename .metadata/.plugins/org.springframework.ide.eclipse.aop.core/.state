@@ -39,7 +39,8 @@
 <aop-project name="atcrowdfunding-manager-api"/>
 <aop-project name="atcrowdfunding-common"/>
 <aop-project name="scw-order"/>
+<aop-project name="scw-register"/>
 <aop-project name="atcrowdfunding-manager-impl"/>
-<aop-project name="scw-project"/>
 <aop-project name="scw-user"/>
+<aop-project name="scw-project"/>
 </aop-reference-model>

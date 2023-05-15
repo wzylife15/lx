@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="com.atguigu.atcrowdfunding.bean.TRole"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
-<fullyQualifiedTypeName name="com.atguigu.atcrowdfunding.bean.TPermission"/>
-<fullyQualifiedTypeName name="org.springframework.security.core.authority.SimpleGrantedAuthority"/>
 <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.User"/>
 <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
 <fullyQualifiedTypeName name="ch.qos.logback.classic.Logger"/>
@@ -60,4 +55,9 @@
 <fullyQualifiedTypeName name="com.aliyun.oss.model.PutObjectResult"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="com.atguigu.scw.project.component.OssTemplate"/>
+<fullyQualifiedTypeName name="com.atguigu.scw.project.vo.req.BaseVo"/>
+<fullyQualifiedTypeName name="com.atguigu.scw.project.constant.ProjectConstant"/>
+<fullyQualifiedTypeName name="com.atguigu.scw.project.vo.req.ProjectBaseInfoVo"/>
+<fullyQualifiedTypeName name="com.atguigu.scw.project.vo.req.ProjectRedisStorageVo"/>
+<fullyQualifiedTypeName name="com.atguigu.scw.project.service.TProjectService"/>
 </qualifiedTypeNameHistroy>
